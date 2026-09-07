@@ -2,7 +2,7 @@ function About(){
     return (
         <div>
             <h1> О нас </h1>
-            <p>страницао нас </p>
+            <p>Страница о  нас </p>
         </div>
 
     )

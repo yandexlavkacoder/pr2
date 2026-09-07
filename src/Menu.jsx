@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
 
@@ -22,6 +22,7 @@ function Menu() {
         display: "flex",
         alignItems: "center",
         flexWrap: "wrap",
+        width: "100%",
       }}
     >
       <NavLink to="/" end style={({ isActive }) => linkStyle(isActive)}>
@@ -42,8 +43,8 @@ function Menu() {
         style={{
           marginLeft: "auto",
           padding: "8px 15px",
-          backgroundColor: theme === "dark" ? "#555" : "#ddd",
-          color: theme === "dark" ? "#fff" : "#000",
+          backgroundColor: "#007bff",
+          color: "#fff",
           border: "none",
           borderRadius: "5px",
           cursor: "pointer",

@@ -6,6 +6,10 @@ function Cart() {
   const { cart, removeFromCart, getTotalPrice } = useContext(CartContext);
   const { theme } = useContext(ThemeContext);
 
+  const containerStyle = {
+    color: theme === "dark" ? "#fff" : "#000",
+  };
+
   const buttonStyle = {
     backgroundColor: "#dc3545",
     color: "white",
@@ -28,7 +32,7 @@ function Cart() {
 
   if (cart.length === 0) {
     return (
-      <div>
+      <div style={containerStyle}>
         <h2>Корзина</h2>
         <p>Корзина пуста</p>
       </div>
@@ -36,7 +40,7 @@ function Cart() {
   }
 
   return (
-    <div>
+    <div style={containerStyle}>
       <h2>Корзина</h2>
       <div>
         {cart.map((item) => (

@@ -17,8 +17,13 @@ function Catalog() {
   const { theme } = useContext(ThemeContext);
 
   const handleAddToCart = (product) => {
-    addToCart(product); 
-    navigate("/cart"); 
+    addToCart(product);
+    navigate("/cart");
+  };
+
+  const titleStyle = {
+    color: theme === "dark" ? "#fff" : "#000",
+    textAlign: "center",
   };
 
   const cardStyle = {
@@ -28,10 +33,11 @@ function Catalog() {
     width: "200px",
     backgroundColor: theme === "dark" ? "#444" : "#f9f9f9",
     color: theme === "dark" ? "#fff" : "#000",
+    textAlign: "center",
   };
 
   const buttonStyle = {
-    backgroundColor: theme === "dark" ? "#007bff" : "#007bff",
+    backgroundColor: "#007bff",
     color: "white",
     border: "none",
     padding: "8px 15px",
@@ -41,10 +47,18 @@ function Catalog() {
     width: "100%",
   };
 
+  const containerStyle = {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "20px",
+    marginTop: "20px",
+    justifyContent: "center",
+  };
+
   return (
     <div>
-      <h2>Каталог товаров</h2>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", marginTop: "20px" }}>
+      <h2 style={titleStyle}>Каталог товаров</h2>
+      <div style={containerStyle}>
         {products.map((product) => (
           <div key={product.id} style={cardStyle}>
             <h3 style={{ margin: "0 0 10px 0" }}>{product.name}</h3>
